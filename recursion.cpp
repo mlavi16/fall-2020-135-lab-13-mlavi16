@@ -32,16 +32,30 @@ int sumRange(int left, int right) {
 }
 
 int sumArray(int *arr, int size) {
+    // Returns the sum of the array's elements
     return sumArrayInRange(arr, 0, size - 1);
 }
 
 int sumArrayInRange(int *arr, int left, int right) {
-    // Returns the sum of the array's elements
+    // sumArray helper function
     int sum = 0;
     if (left <= right) {
         sum += sumArrayInRange(arr, left + 1, right);
         return sum + arr[left];
     } else {
         return 0;
+    }
+}
+
+bool isAlphanumeric(std::string s) {
+    // returns true if all characters in the string are letters and digits, otherwise returns false.
+    if (s.empty()) {
+        return true;
+    } else {
+        if (!isalnum(s[0])) {
+            return false;
+        }
+        s = s.substr(1, s.length() - 1);
+        return isAlphanumeric(s);
     }
 }
