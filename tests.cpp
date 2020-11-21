@@ -16,5 +16,5 @@ TEST_CASE("sumRange(left, right") {
     CHECK(sumRange(4, 4) == 4);
     CHECK(sumRange(0, 0) == 0);
     CHECK(sumRange(-3, 3) == 0);
-
+    CHECK(sumRange(5, 3) == 0);
 }
