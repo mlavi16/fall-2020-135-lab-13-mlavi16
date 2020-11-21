@@ -10,4 +10,5 @@ Assignment: Lab 13
 
 int main() {
     std::cout << returnRange(-2, 10) << std::endl;
+    std::cout << sumRange(-2, 10) << std::endl;
 }

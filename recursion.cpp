@@ -19,3 +19,14 @@ std::string returnRange(int left, int right) {
         return std::to_string(left) + " " + range;
     }
 }
+
+int sumRange(int left, int right) {
+    // computes the sum of all numbers in range left ≤ x ≤ right
+    int range = 0;
+    if (left > right) {
+        return 0;
+    } else {
+        range += sumRange(left + 1, right);
+        return range + left;
+    }
+}
