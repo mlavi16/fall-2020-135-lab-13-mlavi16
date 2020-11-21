@@ -9,5 +9,5 @@ Assignment: Lab 13
 #include "recursion.h"
 
 int main() {
-    std::cout << printRange(-2, 10) << std::endl;
+    std::cout << returnRange(-2, 10) << std::endl;
 }
