@@ -32,6 +32,16 @@ int sumRange(int left, int right) {
 }
 
 int sumArray(int *arr, int size) {
+    return sumArrayInRange(arr, 0, size - 1);
+}
+
+int sumArrayInRange(int *arr, int left, int right) {
     // Returns the sum of the array's elements
-    return 0;
+    int sum = 0;
+    if (left <= right) {
+        sum += sumArrayInRange(arr, left + 1, right);
+        return sum + arr[left];
+    } else {
+        return 0;
+    }
 }
