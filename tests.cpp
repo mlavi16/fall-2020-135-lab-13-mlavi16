@@ -37,3 +37,23 @@ TEST_CASE("isAlphanumeric(str)") {
     CHECK(isAlphanumeric("yay!") == false);
     CHECK(isAlphanumeric(".asdfgh") == false);
 }
+
+TEST_CASE("nestedParens(str)") {
+    CHECK(nestedParens("") == true);
+    CHECK(nestedParens("()") == true);
+    CHECK(nestedParens("(((())))") == true);
+
+    std::string s = "";
+    for (int i = 0; i < 20; i++) {
+        s = std::string(i, '(') + std::string(i, ')');
+        CHECK(nestedParens(s) == true);
+    }
+
+    CHECK(nestedParens(" ") == false);
+    CHECK(nestedParens("abc123") == false);
+    CHECK(nestedParens("( )") == false);
+    CHECK(nestedParens("(a)") == false);
+    CHECK(nestedParens("(()") == false);
+    CHECK(nestedParens("())") == false);
+    CHECK(nestedParens(")(") == false);
+}

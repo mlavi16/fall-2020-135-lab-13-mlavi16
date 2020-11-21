@@ -30,8 +30,17 @@ int main() {
     // std::cout << "Sum is " << sum2 << std::endl;  // Sum is 34
     // delete[] arr;         // deallocate it
 
-    std::cout << isAlphanumeric("ABCD") << std::endl;        // true (1)
-    std::cout << isAlphanumeric("Abcd1234xyz") << std::endl; // true (1)
-    std::cout << isAlphanumeric("KLMN 8-7-6") << std::endl;  // false (0)
+    // std::cout << isAlphanumeric("ABCD") << std::endl;        // true (1)
+    // std::cout << isAlphanumeric("Abcd1234xyz") << std::endl; // true (1)
+    // std::cout << isAlphanumeric("KLMN 8-7-6") << std::endl;  // false (0)
+
+    std::cout << nestedParens("((()))") << " == 1" << std::endl;      // true (1)
+    std::cout << nestedParens("()") << " == 1" << std::endl;          // true (1)
+    std::cout << nestedParens("") << " == 1" << std::endl;            // true (1)
+
+    std::cout << nestedParens("(((") << " == 0" << std::endl;         // false (0)
+    std::cout << nestedParens("(()") << " == 0" << std::endl;         // false (0)
+    std::cout << nestedParens(")(") << " == 0" << std::endl;          // false (0)
+    std::cout << nestedParens("a(b)c") << " == 0" << std::endl;       // false (0)
 
 }

@@ -59,3 +59,18 @@ bool isAlphanumeric(std::string s) {
         return isAlphanumeric(s);
     }
 }
+
+bool nestedParens(std::string s) {
+    // Returns true if the string is empty or a sequence of nested parentheses.
+    // Any other symbols or mismatching parenthesis should make the function return false.
+    if (s.empty()) {
+        return true;
+    } else {
+        if (s[0] == '(' && s[s.length()-1] == ')') {
+            s = s.substr(1, s.length()-2);
+            return nestedParens(s);
+        } else {
+            return false;
+        }
+    }
+}
