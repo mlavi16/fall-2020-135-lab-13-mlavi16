@@ -1,5 +1,5 @@
-OBJECTS = recursion.h
-HFILES = recursion.cpp
+OBJECTS = recursion.o
+HFILES = recursion.h
 
 main: main.o ${OBJECTS}
 	g++ -o main main.o ${OBJECTS}
