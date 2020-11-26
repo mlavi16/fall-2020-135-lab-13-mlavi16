@@ -9,13 +9,13 @@
 //     }
 // }
 
-std::string returnRange(int left, int right) {
+std::string printRange(int left, int right) {
     // Returns all numbers in range left ≤ x ≤ right, separated by spaces
     std::string range = "";
     if (left > right) {
         return range;
     } else {
-        range += returnRange(left + 1, right);
+        range += printRange(left + 1, right);
         return std::to_string(left) + " " + range;
     }
 }
