@@ -2,11 +2,11 @@
 #include "doctest.h"
 #include "recursion.h"
 
-TEST_CASE("returnRange(left, right)") {
-    CHECK(returnRange(-5, 5) == "-5 -4 -3 -2 -1 0 1 2 3 4 5 ");
-    CHECK(returnRange(0, 2) == "0 1 2 ");
-    CHECK(returnRange(0, 0) == "0 ");
-    CHECK(returnRange(5, 4) == "");
+TEST_CASE("printRange(left, right)") {
+    CHECK(printRange(-5, 5) == "-5 -4 -3 -2 -1 0 1 2 3 4 5 ");
+    CHECK(printRange(0, 2) == "0 1 2 ");
+    CHECK(printRange(0, 0) == "0 ");
+    CHECK(printRange(5, 4) == "");
 }
 
 TEST_CASE("sumRange(left, right") {
@@ -22,10 +22,14 @@ TEST_CASE("sumRange(left, right") {
     CHECK(sumRange(5, 3) == 0); //range is empty
 }
 
-// TEST_CASE("sumArray(arr, size)") {
-//     CHECK( == );
-
-// }
+TEST_CASE("sumArray(arr, size)") {
+    int arr[] = {1, 5, 9, -10, 17, 3};
+    CHECK(sumArray(arr, 0) == 0);
+    CHECK(sumArray(arr, -2) == 0);
+    CHECK(sumArray(arr, 1) == 1);
+    CHECK(sumArray(arr, 5) == 22);
+    CHECK(sumArray(arr, 6) == 25);
+}
 
 TEST_CASE("isAlphanumeric(str)") {
     CHECK(isAlphanumeric("ERTSDsdfjlk") == true);
